@@ -16,4 +16,40 @@ MonoBehaviour:
   - iID: item_woodlog
     iName: "Th\xE2n c\xE2y"
     iSpr: {fileID: 0}
+    type: material
+    weaponData:
+      wType: 
+      wATK: 0
+      wAttackSpeed: 0
+      wMaxDurability: 0
     stackable: 1
+  - iID: item_stick
+    iName: Que
+    iSpr: {fileID: 0}
+    type: material
+    weaponData:
+      wType: 
+      wATK: 0
+      wAttackSpeed: 0
+      wMaxDurability: 0
+    stackable: 1
+  - iID: item_grassstring
+    iName: "D\xE2y c\u1ECF"
+    iSpr: {fileID: 0}
+    type: material
+    weaponData:
+      wType: 
+      wATK: 0
+      wAttackSpeed: 0
+      wMaxDurability: 0
+    stackable: 1
+  - iID: item_woodenAxe
+    iName: "R\xECu g\u1ED7"
+    iSpr: {fileID: 0}
+    type: weapon
+    weaponData:
+      wType: axe
+      wATK: 3
+      wAttackSpeed: 0.8
+      wMaxDurability: 100
+    stackable: 0

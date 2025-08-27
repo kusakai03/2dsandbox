@@ -163,6 +163,7 @@ public class Chunk
                     if (biome.InRange(heightValue, tempValue))
                     {
                         tilemap.SetTile(new Vector3Int(worldX, worldY, 0), biome.tile);
+                        GridManager.ins.SetWalkable(new Vector2Int(worldX, worldY), biome.type != BiomeType.Ocean);
                         if (biome.spawnableObjects != null && biome.spawnableObjects.Length > 0)
                         {
                             if (Random.value < biome.spawnChance)

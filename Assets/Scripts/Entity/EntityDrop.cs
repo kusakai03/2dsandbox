@@ -21,7 +21,7 @@ public class EntityDrop : MonoBehaviour
         {
             if (UnityEngine.Random.Range(0f, 1f) <= d.dropChance)
             {
-                for (int i = 1; i < d.dropAmount; i++)
+                for (int i = 1; i <= d.dropAmount; i++)
                 {
                     DropItem(d.itemDrop, transform.position);
                 }

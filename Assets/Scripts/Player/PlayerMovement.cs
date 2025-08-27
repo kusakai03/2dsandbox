@@ -9,16 +9,32 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 dir { get; private set; }
     private PlayerInputActions inputActions;
     public bool canMove;
+    public bool isKnocked;
     [SerializeField] private SpriteRenderer sr;
     void LateUpdate()
     {
         sr.sortingOrder = -(int)transform.position.y;
+    }
+    private void Start()
+    {
+        GetComponent<EntityStats>().OnEntityHit += (sender, e) =>
+        {
+            canMove = false;
+            isKnocked = true;
+            Invoke(nameof(EnableMovement), 0.5f);
+        };
+    }
+    private void EnableMovement()
+    {
+        canMove = true;
+        isKnocked = false;
     }
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputActions = new PlayerInputActions();
         canMove = true;
+        isKnocked = false;
     }
 
     void OnEnable()
@@ -48,8 +64,8 @@ public class PlayerMovement : MonoBehaviour
         {
             mult = MapManager.ins.GetSpeedMultiplier(transform.position);
         }
-
-        rb.linearVelocity = moveInput * baseMoveSpeed * mult;
+        if (!isKnocked)
+            rb.linearVelocity = moveInput * baseMoveSpeed * mult;
     }
 
 }

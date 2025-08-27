@@ -20,7 +20,7 @@ public class AttackRangeDetect : MonoBehaviour
     }
     private void OnDisable()
     {
-        foreach (var target in targets) target.TakeDamage(master.GetFinalATK());
+        foreach (var target in targets) target.TakeDamage(master.GetFinalATK(), master.transform.position);
     }
     private void Update()
     {

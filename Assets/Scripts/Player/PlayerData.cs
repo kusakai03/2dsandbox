@@ -1,53 +1,80 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    [SerializeField] private List<PlayerInventoryItem> inventory;
+    public event EventHandler OnInventoryChanged;
+    [SerializeField] private PlayerInventoryItem[] inventory = new PlayerInventoryItem[27];
+    public PlayerInventoryItem[] GetInventory() => inventory;
     [SerializeField] private int maxQuantityPerSlot = 999;
+    public int currentIndex = 0;
+    public PlayerInventoryItem GetCurrentInvIndex()
+    {
+        if (currentIndex < 0 || currentIndex >= inventory.Length)
+            return null;
+
+        return inventory[currentIndex];
+    }
+    public void SetCurrentIndex(int index)
+    {
+        if (index < 0 || index >= inventory.Length)
+            return;
+
+        currentIndex = index;
+    }
     public void AddToInventory(string id, int quantity)
     {
         if (!Database.db.IsItemInCatalog(id))
             return;
 
-        int currentQuantity = quantity;
         var gameItem = Database.db.GetGameItemByid(id);
 
-        if (gameItem.stackable == 1) // Item có thể stack
+        if (gameItem.stackable == 1)
         {
-            var item = inventory.Find(e => e.id == id);
-            if (item != null)
+            for (int i = 0; i < inventory.Length && quantity > 0; i++)
             {
-                item.quantity += currentQuantity;
+                var slot = inventory[i];
+                if (slot != null && slot.id == id && slot.quantity < maxQuantityPerSlot)
+                {
+                    int canAdd = maxQuantityPerSlot - slot.quantity;
+                    int toAdd = Mathf.Min(quantity, canAdd);
+                    slot.quantity += toAdd;
+                    quantity -= toAdd;
+                }
+            }
 
-                while (item.quantity > maxQuantityPerSlot)
-                {
-                    int overflow = item.quantity - maxQuantityPerSlot;
-                    item.quantity = maxQuantityPerSlot;
-                    var newSlot = new PlayerInventoryItem(id, overflow);
-                    inventory.Add(newSlot);
-                    item = newSlot; // tiếp tục check slot mới
-                }
-            }
-            else
+            for (int i = 0; i < inventory.Length && quantity > 0; i++)
             {
-                while (currentQuantity > maxQuantityPerSlot)
+                if (inventory[i].id == string.Empty)
                 {
-                    inventory.Add(new PlayerInventoryItem(id, maxQuantityPerSlot));
-                    currentQuantity -= maxQuantityPerSlot;
+                    int toAdd = Mathf.Min(quantity, maxQuantityPerSlot);
+                    inventory[i] = new PlayerInventoryItem(id, toAdd);
+                    quantity -= toAdd;
                 }
-                inventory.Add(new PlayerInventoryItem(id, currentQuantity));
             }
         }
-        else // Item không stack
+        else
         {
-            inventory.Add(new PlayerInventoryItem(id, 1));
+            for (int i = 0; i < inventory.Length && quantity > 0; i++)
+            {
+                if (inventory[i].id == string.Empty)
+                {
+                    inventory[i] = new PlayerInventoryItem(id, 1);
+                    quantity--;
+                }
+            }
         }
+
+        // Nếu vẫn còn dư → nghĩa là túi đã full
+        if (quantity > 0)
+        {
+            Debug.Log($"Inventory full, {quantity} item(s) could not be added!");
+            // TODO: xử lý vứt ra ngoài map hoặc gửi vào storage
+        }
+        OnInventoryChanged?.Invoke(this, EventArgs.Empty);
     }
-
 }
+
 [Serializable]
 public class PlayerInventoryItem
 {
