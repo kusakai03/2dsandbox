@@ -49,5 +49,8 @@ TagManager:
   - name: entity
     uniqueID: 1434744539
     locked: 0
+  - name: GlobalUI
+    uniqueID: 1063766583
+    locked: 0
   m_RenderingLayers:
   - Default

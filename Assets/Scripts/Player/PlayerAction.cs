@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
+    public event EventHandler OnPlayerAttack;
+    public event EventHandler OnPlayerOpenInventory;
     [SerializeField] private GameObject attackRange;
     [SerializeField] private float attackSpeed;
     private bool canAttack = true;
@@ -13,6 +16,7 @@ public class PlayerAction : MonoBehaviour
         GetComponent<PlayerMovement>().canMove = false;
         attackRange.SetActive(true);
         Invoke(nameof(DoneAttack), 0.2f);
+        OnPlayerAttack?.Invoke(this, EventArgs.Empty);
     }
     private void DoneAttack()
     {
@@ -27,5 +31,9 @@ public class PlayerAction : MonoBehaviour
     private void ResetAttack()
     {
         canAttack = true;
+    }
+    public void OpenInventory()
+    {
+        OnPlayerOpenInventory?.Invoke(this, EventArgs.Empty);
     }
 }

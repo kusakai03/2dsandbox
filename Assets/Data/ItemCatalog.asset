@@ -53,3 +53,13 @@ MonoBehaviour:
       wAttackSpeed: 0.8
       wMaxDurability: 100
     stackable: 0
+  - iID: item_woodplank
+    iName: "V\xE1n g\u1ED7"
+    iSpr: {fileID: 0}
+    type: material
+    weaponData:
+      wType: axe
+      wATK: 3
+      wAttackSpeed: 0.8
+      wMaxDurability: 100
+    stackable: 1
