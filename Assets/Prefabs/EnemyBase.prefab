@@ -127,7 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 10
-  atk: 1
+  entityTag: 
+  baseATK: 1
+  ATKBonus: 0
 --- !u!114 &7036831077438439318
 MonoBehaviour:
   m_ObjectHideFlags: 0

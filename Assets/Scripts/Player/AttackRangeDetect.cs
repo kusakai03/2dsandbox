@@ -20,7 +20,22 @@ public class AttackRangeDetect : MonoBehaviour
     }
     private void OnDisable()
     {
-        foreach (var target in targets) target.TakeDamage(master.GetFinalATK(), master.transform.position);
+        foreach (var target in targets)
+        {
+            float damage = master.GetFinalATK();
+            if (target.entityTag == "Tree" && master.GetComponent<PlayerAction>().weaponType == "axe")
+            {
+                damage *= 2;
+            }
+            target.TakeDamage(damage, master.transform.position);
+        }
+        if (targets.Count > 0)
+        {
+            PlayerData pd = master.GetComponent<PlayerData>();
+            if (pd != null && pd.GetCurrentInvIndex().id != string.Empty &&
+            Database.db.GetGameItemByid(pd.GetCurrentInvIndex().id).type == "weapon")
+                pd.DrainDurability(pd.currentIndex, 1);
+        }
     }
     private void Update()
     {

@@ -180,6 +180,96 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""7d4808ea-d313-4873-b192-fc2f0bb60986"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Num1"",
+                    ""type"": ""Button"",
+                    ""id"": ""29586bfb-ccbe-4ce6-846c-ee61ed8c07e3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num2"",
+                    ""type"": ""Button"",
+                    ""id"": ""2ad26ed2-46a5-4774-8654-d7d412297409"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num3"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9a183f3-607d-4cca-bd39-e67da304bad0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num4"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ec38d3e-795a-4105-bbc1-906aa4e68752"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num5"",
+                    ""type"": ""Button"",
+                    ""id"": ""132e6421-ddfd-40cf-b397-a52111045030"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num6"",
+                    ""type"": ""Button"",
+                    ""id"": ""00fe73aa-ef18-4b76-acc5-f001c6ed4ab8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num7"",
+                    ""type"": ""Button"",
+                    ""id"": ""6330027f-43e2-4bcc-a60d-4308c5f606bc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num8"",
+                    ""type"": ""Button"",
+                    ""id"": ""6925e1d4-819f-4791-b93a-970a21a616ab"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num9"",
+                    ""type"": ""Button"",
+                    ""id"": ""40a04601-cb90-49d9-8337-a31678fe0f9f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -576,6 +666,116 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f0ca5e6-db2e-4d07-9137-61611d9e334b"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57869bd7-fb20-4493-95da-0dd7031d8c28"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""333b360e-5bfc-4315-84bb-79eb41df6164"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3abb9e20-a8ab-4c6c-b3d5-2bf3b7d02836"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09eb3da2-4772-425c-8662-b31d153691f5"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f571f81f-2076-49a9-81e5-b71ab175dcc6"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6083a5ee-ca83-4333-a14a-a0a7a1d2a499"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e544d9b9-55ad-4c24-965a-aae8bb6d6455"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b5c2cbe-3d8d-4868-988d-4fffd336bcf5"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02eac15d-ba85-4c7a-a95b-d9ae0647082d"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Num9"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1173,6 +1373,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
+        m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
+        m_Player_Num1 = m_Player.FindAction("Num1", throwIfNotFound: true);
+        m_Player_Num2 = m_Player.FindAction("Num2", throwIfNotFound: true);
+        m_Player_Num3 = m_Player.FindAction("Num3", throwIfNotFound: true);
+        m_Player_Num4 = m_Player.FindAction("Num4", throwIfNotFound: true);
+        m_Player_Num5 = m_Player.FindAction("Num5", throwIfNotFound: true);
+        m_Player_Num6 = m_Player.FindAction("Num6", throwIfNotFound: true);
+        m_Player_Num7 = m_Player.FindAction("Num7", throwIfNotFound: true);
+        m_Player_Num8 = m_Player.FindAction("Num8", throwIfNotFound: true);
+        m_Player_Num9 = m_Player.FindAction("Num9", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1276,6 +1486,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Inventory;
+    private readonly InputAction m_Player_Scroll;
+    private readonly InputAction m_Player_Num1;
+    private readonly InputAction m_Player_Num2;
+    private readonly InputAction m_Player_Num3;
+    private readonly InputAction m_Player_Num4;
+    private readonly InputAction m_Player_Num5;
+    private readonly InputAction m_Player_Num6;
+    private readonly InputAction m_Player_Num7;
+    private readonly InputAction m_Player_Num8;
+    private readonly InputAction m_Player_Num9;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1327,6 +1547,46 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Inventory".
         /// </summary>
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Scroll".
+        /// </summary>
+        public InputAction @Scroll => m_Wrapper.m_Player_Scroll;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num1".
+        /// </summary>
+        public InputAction @Num1 => m_Wrapper.m_Player_Num1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num2".
+        /// </summary>
+        public InputAction @Num2 => m_Wrapper.m_Player_Num2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num3".
+        /// </summary>
+        public InputAction @Num3 => m_Wrapper.m_Player_Num3;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num4".
+        /// </summary>
+        public InputAction @Num4 => m_Wrapper.m_Player_Num4;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num5".
+        /// </summary>
+        public InputAction @Num5 => m_Wrapper.m_Player_Num5;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num6".
+        /// </summary>
+        public InputAction @Num6 => m_Wrapper.m_Player_Num6;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num7".
+        /// </summary>
+        public InputAction @Num7 => m_Wrapper.m_Player_Num7;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num8".
+        /// </summary>
+        public InputAction @Num8 => m_Wrapper.m_Player_Num8;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Num9".
+        /// </summary>
+        public InputAction @Num9 => m_Wrapper.m_Player_Num9;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1383,6 +1643,36 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
+            @Scroll.started += instance.OnScroll;
+            @Scroll.performed += instance.OnScroll;
+            @Scroll.canceled += instance.OnScroll;
+            @Num1.started += instance.OnNum1;
+            @Num1.performed += instance.OnNum1;
+            @Num1.canceled += instance.OnNum1;
+            @Num2.started += instance.OnNum2;
+            @Num2.performed += instance.OnNum2;
+            @Num2.canceled += instance.OnNum2;
+            @Num3.started += instance.OnNum3;
+            @Num3.performed += instance.OnNum3;
+            @Num3.canceled += instance.OnNum3;
+            @Num4.started += instance.OnNum4;
+            @Num4.performed += instance.OnNum4;
+            @Num4.canceled += instance.OnNum4;
+            @Num5.started += instance.OnNum5;
+            @Num5.performed += instance.OnNum5;
+            @Num5.canceled += instance.OnNum5;
+            @Num6.started += instance.OnNum6;
+            @Num6.performed += instance.OnNum6;
+            @Num6.canceled += instance.OnNum6;
+            @Num7.started += instance.OnNum7;
+            @Num7.performed += instance.OnNum7;
+            @Num7.canceled += instance.OnNum7;
+            @Num8.started += instance.OnNum8;
+            @Num8.performed += instance.OnNum8;
+            @Num8.canceled += instance.OnNum8;
+            @Num9.started += instance.OnNum9;
+            @Num9.performed += instance.OnNum9;
+            @Num9.canceled += instance.OnNum9;
         }
 
         /// <summary>
@@ -1424,6 +1714,36 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
+            @Scroll.started -= instance.OnScroll;
+            @Scroll.performed -= instance.OnScroll;
+            @Scroll.canceled -= instance.OnScroll;
+            @Num1.started -= instance.OnNum1;
+            @Num1.performed -= instance.OnNum1;
+            @Num1.canceled -= instance.OnNum1;
+            @Num2.started -= instance.OnNum2;
+            @Num2.performed -= instance.OnNum2;
+            @Num2.canceled -= instance.OnNum2;
+            @Num3.started -= instance.OnNum3;
+            @Num3.performed -= instance.OnNum3;
+            @Num3.canceled -= instance.OnNum3;
+            @Num4.started -= instance.OnNum4;
+            @Num4.performed -= instance.OnNum4;
+            @Num4.canceled -= instance.OnNum4;
+            @Num5.started -= instance.OnNum5;
+            @Num5.performed -= instance.OnNum5;
+            @Num5.canceled -= instance.OnNum5;
+            @Num6.started -= instance.OnNum6;
+            @Num6.performed -= instance.OnNum6;
+            @Num6.canceled -= instance.OnNum6;
+            @Num7.started -= instance.OnNum7;
+            @Num7.performed -= instance.OnNum7;
+            @Num7.canceled -= instance.OnNum7;
+            @Num8.started -= instance.OnNum8;
+            @Num8.performed -= instance.OnNum8;
+            @Num8.canceled -= instance.OnNum8;
+            @Num9.started -= instance.OnNum9;
+            @Num9.performed -= instance.OnNum9;
+            @Num9.canceled -= instance.OnNum9;
         }
 
         /// <summary>
@@ -1794,6 +2114,76 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInventory(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Scroll" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnScroll(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum4(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num5" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum5(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num6" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum6(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num7" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum7(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num8" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum8(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Num9" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNum9(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

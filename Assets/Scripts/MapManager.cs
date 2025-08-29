@@ -210,7 +210,9 @@ public enum BiomeType
     Grassland,
     Desert,
     Snow,
-    Mountain
+    Mountain,
+    Cave_Ground,
+    Cave_Wall
 }
 [System.Serializable]
 public class Biome

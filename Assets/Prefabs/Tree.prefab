@@ -63,8 +63,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 10
-  currentHeath: 0
-  atk: 0
+  entityTag: Tree
+  baseATK: 0
+  ATKBonus: 0
 --- !u!61 &3590298138277083296
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerData : MonoBehaviour
 {
@@ -8,12 +9,62 @@ public class PlayerData : MonoBehaviour
     public PlayerInventoryItem[] GetInventory() => inventory;
     [SerializeField] private int maxQuantityPerSlot = 999;
     public int currentIndex = 0;
+    [SerializeField] private int hotbarSize = 9;
+    public int HotbarSize => hotbarSize;
     public PlayerInventoryItem GetCurrentInvIndex()
     {
-        if (currentIndex < 0 || currentIndex >= inventory.Length)
+        if (currentIndex < 0 || currentIndex >= hotbarSize)
             return null;
-
         return inventory[currentIndex];
+    }
+    private PlayerInputActions controls;
+
+    private void Awake()
+    {
+        controls = new PlayerInputActions();
+    }
+
+    private void OnEnable()
+    {
+        controls.Player.Enable();
+        controls.Player.Scroll.performed += OnScroll;
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.Scroll.performed -= OnScroll;
+        controls.Player.Disable();
+    }
+
+    private void OnScroll(InputAction.CallbackContext ctx)
+    {
+        Vector2 scroll = ctx.ReadValue<Vector2>();
+        float scrollY = scroll.y;
+
+        if (scrollY > 0f)
+        {
+            currentIndex = Mathf.Max(0, currentIndex - 1);
+            OnInventoryChanged?.Invoke(this, EventArgs.Empty);
+        }
+        else if (scrollY < 0f)
+        {
+            currentIndex = Mathf.Min(HotbarSize - 1, currentIndex + 1);
+            OnInventoryChanged?.Invoke(this, EventArgs.Empty);
+        }
+    }
+    public void OnHotbar1() => SetHotbar(0);
+    public void OnHotbar2() => SetHotbar(1);
+    public void OnHotbar3() => SetHotbar(2);
+    public void OnHotbar4() => SetHotbar(3);
+    public void OnHotbar5() => SetHotbar(4);
+    public void OnHotbar6() => SetHotbar(5);
+    public void OnHotbar7() => SetHotbar(6);
+    public void OnHotbar8() => SetHotbar(7);
+    public void OnHotbar9() => SetHotbar(8);
+    private void SetHotbar(int index)
+    {
+        currentIndex = Mathf.Clamp(index, 0, hotbarSize - 1);
+        OnInventoryChanged?.Invoke(this, EventArgs.Empty);
     }
     public PlayerInventoryItem GetItemByID(string id)
     {
@@ -24,13 +75,6 @@ public class PlayerData : MonoBehaviour
                 totalQuantity += item.quantity;
         }
         return new PlayerInventoryItem(id, totalQuantity);
-    }
-    public void SetCurrentIndex(int index)
-    {
-        if (index < 0 || index >= inventory.Length)
-            return;
-
-        currentIndex = index;
     }
     public void AddToInventory(string id, int quantity)
     {
@@ -69,7 +113,12 @@ public class PlayerData : MonoBehaviour
             {
                 if (inventory[i].id == string.Empty)
                 {
-                    inventory[i] = new PlayerInventoryItem(id, 1);
+                    float durability = 0;
+                    if (Database.db.GetGameItemByid(id).type == "weapon")
+                    {
+                        durability = gameItem.weaponData.wMaxDurability;
+                    }
+                    inventory[i] = new PlayerInventoryItem(id, 1, durability);
                     quantity--;
                 }
             }
@@ -80,6 +129,22 @@ public class PlayerData : MonoBehaviour
         {
             Debug.Log($"Inventory full, {quantity} item(s) could not be added!");
             // TODO: xử lý vứt ra ngoài map hoặc gửi vào storage
+        }
+        OnInventoryChanged?.Invoke(this, EventArgs.Empty);
+    }
+    public void DrainDurability(int index, float amount)
+    {
+        if (index < 0 || index >= inventory.Length)
+            return;
+
+        var slot = inventory[index];
+        if (slot != null && slot.durability > 0)
+        {
+            slot.durability = Mathf.Max(0, slot.durability - amount);
+        }
+        if (slot.durability <= 0)
+        {
+            inventory[index] = new PlayerInventoryItem(string.Empty, 0);
         }
         OnInventoryChanged?.Invoke(this, EventArgs.Empty);
     }
@@ -121,10 +186,14 @@ public class PlayerInventoryItem
 {
     public string id;
     public int quantity;
+    public float durability;
+    public float maxDurability;
 
-    public PlayerInventoryItem(string id, int currentQuantity)
+    public PlayerInventoryItem(string id, int currentQuantity, float maxDurability = 0)
     {
         this.id = id;
         quantity = currentQuantity;
+        this.maxDurability = maxDurability;
+        durability = maxDurability;
     }
 }

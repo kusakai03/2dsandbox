@@ -22,6 +22,7 @@ public class GameTex : MonoBehaviour
     private int currentPage = 0;
     [SerializeField] private int craftingStrength;
     [SerializeField] private GameObject craftingButton;
+    [SerializeField] private TextMeshProUGUI itemTitle;
     private int selectedRecipeIndex = -1;
     private List<Craft> recipes = new();
     private void Start()
@@ -39,6 +40,7 @@ public class GameTex : MonoBehaviour
         }
         recipes = new();
         selectedRecipeIndex = -1;
+        itemTitle.text = "";
     }
     public void Exit()
     {
@@ -175,22 +177,33 @@ public class GameTex : MonoBehaviour
     {
         PlayerData playerData = player.GetComponent<PlayerData>();
         var inventory = playerData.GetInventory();
-
-        // Cập nhật lại UI item slots dựa trên dữ liệu inventory hiện tại
         for (int i = 0; i < itemSlotsUI.Length; i++)
         {
             var slot = itemSlotsUI[i];
             var item = inventory[i];
-
             if (item != null && item.id != string.Empty)
             {
-                slot.GetComponent<Image>().sprite = Database.db.GetGameItemByid(item.id).iSpr;
-                slot.GetComponentInChildren<TextMeshProUGUI>().text = item.quantity.ToString();
+                ItemInfo dbI = Database.db.GetGameItemByid(item.id);
+                bool isWeapon = dbI.type == "weapon";
+                slot.GetComponent<Image>().sprite = dbI.iSpr;
+                slot.GetComponentInChildren<TextMeshProUGUI>().text = isWeapon ? "" : item.quantity.ToString();
+                slot.transform.GetChild(2).gameObject.SetActive(isWeapon);
+                slot.transform.GetChild(2).GetComponent<Slider>().maxValue = item.maxDurability;
+                slot.transform.GetChild(2).GetComponent<Slider>().value = item.durability;
             }
             else
             {
                 slot.GetComponent<Image>().sprite = null;
                 slot.GetComponentInChildren<TextMeshProUGUI>().text = "";
+                slot.transform.GetChild(2).gameObject.SetActive(false);
+            }
+            slot.transform.GetChild(1).gameObject.SetActive(i == playerData.currentIndex);
+
+
+            if (playerData.GetCurrentInvIndex().id != string.Empty)
+            {
+                itemTitle.text = Database.db.GetGameItemByid(playerData.GetCurrentInvIndex().id).iName;
+                itemTitle.gameObject.SetActive(true);
             }
         }
     }

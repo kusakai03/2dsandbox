@@ -6,14 +6,19 @@ public class EntityStats : MonoBehaviour
     public event EventHandler OnEntityZeroHealth;
     public event EventHandler OnEntityHit;
     [SerializeField] private float maxHeath;
-    [SerializeField] private string entityTag;
+    public string entityTag;
     public float currentHealth { get; private set; }
-    [SerializeField] private float atk;
+    [SerializeField] private float baseATK;
+    [SerializeField] private float ATKBonus;
     private bool d;
     private bool gotHit;
     public float GetFinalATK()
     {
-        return atk;
+        return baseATK + ATKBonus;
+    }
+    public void SetATKBonus(float bonus)
+    {
+        ATKBonus = bonus;
     }
     private void Start()
     {
